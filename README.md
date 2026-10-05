@@ -4,7 +4,7 @@
 
 *Unofficial single-player scenario builder for SimRail. [English version below](#-english).*
 
-**[⬇ Pobierz wersję 3.12.0 Beta](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest)** · Windows 10/11 (64-bit) · 44 MB · [Zgłoś błąd](https://github.com/magxmetin2-dotcom/simrail-route-studio/issues)
+**[⬇ Pobierz wersję 3.13.0 Beta](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest)** · Windows 10/11 (64-bit) · 44 MB · [Zgłoś błąd](https://github.com/magxmetin2-dotcom/simrail-route-studio/issues)
 
 > [!NOTE]
 > Nieoficjalny program Krzysztofa Maluhy. To nie jest narzędzie twórców SimRail i nie jest przez nich wspierane.
@@ -19,9 +19,17 @@ ZRZUTY EKRANU: zapisz pliki PNG w folderze docs/screenshots/ i usuń znaczniki k
 
 ## 🇵🇱 Polski
 
+### Co nowego w 3.13
+
+- „Własne trasy” wybierają najkrótszą drogę w bazie (wcześniej: drogę z najmniejszą liczbą odcinków) i pokazują jej przybliżoną długość w km. Lista dostępnych celów liczy się szybciej.
+- Tryb angielski: przetłumaczone komunikaty, raport diagnostyki i okno pierwszej konfiguracji. Tłumaczenie nie psuje już słów.
+- Przy nieoczekiwanym błędzie program pokazuje krótki komunikat i zapisuje plik `crash.log` zamiast surowego okna błędu .NET.
+- Folder roboczy `RouteStudioStaging` w folderze gry jest sprzątany po zapisie trasy.
+- Baza tras i zgodna wersja gry są takie same jak w 3.12.0.
+
 ### Co potrafi
 
-- **Własne trasy (próba)** – nowość w 3.12. Wybierz stację początkową, opcjonalne stacje „przez” i stację docelową na głównej mapie gry. Program sam dobierze drogę, semafory i przebiegi dyżurnego.
+- **Własne trasy (próba)** – wybierz stację początkową, opcjonalne stacje „przez” i stację docelową na głównej mapie gry. Program sam dobierze najkrótszą drogę w bazie, semafory i przebiegi dyżurnego oraz pokaże przybliżoną długość trasy.
 - **Kreator scenariusza** – własny skład z pojazdów z gry (lokomotywy, wagony, ładunki) na bazie oficjalnego scenariusza, z wyborem pory dnia, pogody, natężenia ruchu i opcjonalnym własnym rozkładem („Rozkład”).
 - **Manewry** – misje manewrowe.
 - **Bezpieczna praca** – projekty, zapisane składy, cofanie i ponawianie zmian oraz automatyczne odzyskiwanie pracy („Odzyskiwanie”).
@@ -38,13 +46,13 @@ ZRZUTY EKRANU: zapisz pliki PNG w folderze docs/screenshots/ i usuń znaczniki k
 
 ### Instalacja
 
-1. Pobierz plik `SimRail-Route-Studio-3.12.0-Beta-Full-Offline-Setup.exe` ze strony [Releases](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest).
+1. Pobierz plik `SimRail-Route-Studio-3.13.0-Beta-Full-Offline-Setup.exe` ze strony [Releases](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest).
 2. Zalecane: sprawdź sumę kontrolną pliku (patrz [Bezpieczeństwo i prywatność](#bezpieczeństwo-i-prywatność)).
 3. Uruchom instalator. Nie potrzebuje uprawnień administratora. Domyślnie program trafia do `%LOCALAPPDATA%\Programs\SimRail Route Studio Beta`.
 
 Instalator nie jest jeszcze podpisany cyfrowo, więc Windows może wyświetlić ostrzeżenie SmartScreen. Co wtedy zrobić, opisuje [FAQ](#najczęstsze-pytania).
 
-Wersja beta instaluje się obok starszej wersji programu i jej nie usuwa.
+Wersja beta instaluje się obok starszej wersji programu i jej nie usuwa. Jeśli masz już 3.12.0 Beta, instalator 3.13.0 ją zaktualizuje; ustawienia, projekty i scenariusze zostają.
 
 ### Jak utworzyć własną trasę
 
@@ -63,7 +71,7 @@ Scenariusz trafia od razu do folderu gry (`SimRail_Data\StreamingAssets\Scenerie
 ### Ograniczenia wersji beta
 
 - Nie każda para stacji ma w bazie kompletne połączenie. Jeśli program nie znajduje drogi, nie znaczy to, że w grze jej nie ma.
-- Program nie gwarantuje najkrótszej drogi. Przebiegi w obie strony są szukane osobno.
+- Program wybiera najkrótszą drogę w bazie. Długość trasy jest przybliżona (liczona z długości torów). Przebiegi w obie strony są szukane osobno.
 - Nowa relacja i nowy skład wymagają przejazdu kontrolnego. Jazda kończy się przed wskazanym semaforem, bez gwarancji zatrzymania przy peronie.
 - Nie ma rozkładu postojów pasażerskich ani połączenia z manewrami.
 - Skład może mieć do ok. 300 m i 40 pozycji albo być jednym kompletnym zespołem trakcyjnym (EZT) bez doczepiania.
@@ -82,16 +90,16 @@ Po aktualizacji SimRaila moduł „Własne trasy” może zgłosić niezgodnoś�
 
 ### Bezpieczeństwo i prywatność
 
-**Suma kontrolna instalatora 3.12.0 Beta (SHA-256):**
+**Suma kontrolna instalatora 3.13.0 Beta (SHA-256):**
 
 ```
-3d3982d8723090667ef8f0d2c79c1f0c4683ca3950a2b148655a1b25dfc3b4d3
+b864800da5a270c7bca547e5443f9bea77c6e35a1dbcf603e050af7711847dc5
 ```
 
 Sprawdzisz ją w PowerShellu, w folderze z pobranym plikiem:
 
 ```powershell
-Get-FileHash .\SimRail-Route-Studio-3.12.0-Beta-Full-Offline-Setup.exe -Algorithm SHA256
+Get-FileHash .\SimRail-Route-Studio-3.13.0-Beta-Full-Offline-Setup.exe -Algorithm SHA256
 ```
 
 - **Bez internetu.** Program nie łączy się z siecią. Baza tras i .NET są w instalatorze. Przycisk „Uruchom” tylko otwiera grę przez Steam.
@@ -106,9 +114,8 @@ Gdzie program zapisuje pliki:
 |---|---|
 | Program i baza tras | `%LOCALAPPDATA%\Programs\SimRail Route Studio Beta` |
 | Kopie zapasowe scenariuszy | podfolder `Backups` w folderze programu |
-| Ustawienia, projekty, składy, odzyskiwanie pracy | `%LOCALAPPDATA%\Krzysztof Maluha\SimRail Route Studio` |
+| Ustawienia, projekty, składy, odzyskiwanie pracy, dziennik błędów `crash.log` | `%LOCALAPPDATA%\Krzysztof Maluha\SimRail Route Studio` |
 | Utworzone scenariusze | nowe foldery `RTS_*` w `SimRail_Data\StreamingAssets\Sceneries\<mapa>\Scenarios` |
-| Folder roboczy zapisu własnych tras | `SimRail_Data\StreamingAssets\Sceneries\1_KatowiceWarszawa\RouteStudioStaging` |
 
 ### Najczęstsze pytania
 
@@ -141,6 +148,8 @@ Załóż zgłoszenie w zakładce [Issues](https://github.com/magxmetin2-dotcom/s
 
 Pomoże też raport z „Diagnostyki”. Przejrzyj go przed wysłaniem.
 
+Jeśli program pokazał komunikat o nieoczekiwanym błędzie, dołącz plik `crash.log` z folderu `%LOCALAPPDATA%\Krzysztof Maluha\SimRail Route Studio`. Ścieżki profilu i folderu gry, SteamID i adresy e-mail są w nim zamaskowane.
+
 ### Odinstalowanie
 
 Ustawienia Windows → Aplikacje → **SimRail Route Studio Beta** → Odinstaluj.
@@ -153,11 +162,19 @@ Odinstalowanie nie usuwa scenariuszy z folderu gry, kopii zapasowych ani danych 
 
 **Unofficial single-player scenario builder for [SimRail](https://store.steampowered.com/app/1422130/)** by Krzysztof Maluha. It is not made or supported by the SimRail developers. Build your own consist, pick a start and a destination, and the program selects the signals and dispatcher routes and saves a ready-to-play scenario into the game.
 
-**[⬇ Download 3.12.0 Beta](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest)** · Windows 10/11 (64-bit) · 44 MB · [Report a bug](https://github.com/magxmetin2-dotcom/simrail-route-studio/issues)
+**[⬇ Download 3.13.0 Beta](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest)** · Windows 10/11 (64-bit) · 44 MB · [Report a bug](https://github.com/magxmetin2-dotcom/simrail-route-studio/issues)
+
+### What's new in 3.13
+
+- Custom routes now use the shortest path in the database (previously the path with the fewest segments) and show its approximate length in km. The list of reachable destinations is calculated faster.
+- English mode: translated messages, diagnostics report and first-run window. Translation no longer garbles words.
+- After an unexpected error the program shows a short message and writes `crash.log` instead of the raw .NET error window.
+- The `RouteStudioStaging` work folder in the game folder is cleaned up after saving a route.
+- The route database and the supported game build are the same as in 3.12.0.
 
 ### Features
 
-- **Custom paths (preview)** – new in 3.12. Choose a start, optional *via* stations and a destination on the main game map. The path, signals and dispatcher routes are selected automatically.
+- **Custom routes (preview)** – choose a start, optional *via* stations and a destination on the main game map. The shortest path in the database, the signals and the dispatcher routes are selected automatically, and the approximate length is shown.
 - **Scenario builder** – your own consist from in-game vehicles (locomotives, wagons, cargo) based on an official scenario, with time of day, weather, traffic density and an optional custom timetable.
 - **Shunting** – shunting missions.
 - **Safe workflow** – projects, saved consists, undo/redo and automatic work recovery.
@@ -174,17 +191,17 @@ Odinstalowanie nie usuwa scenariuszy z folderu gry, kopii zapasowych ani danych 
 
 ### Installation
 
-1. Download `SimRail-Route-Studio-3.12.0-Beta-Full-Offline-Setup.exe` from [Releases](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest).
+1. Download `SimRail-Route-Studio-3.13.0-Beta-Full-Offline-Setup.exe` from [Releases](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases/latest).
 2. Recommended: verify the checksum (see [Security and privacy](#security-and-privacy)).
 3. Run the installer. No administrator rights are needed. By default the program goes to `%LOCALAPPDATA%\Programs\SimRail Route Studio Beta`.
 
-The installer is not digitally signed yet, so Windows SmartScreen may show a warning (see the [FAQ](#faq)). The beta installs next to the older version and does not remove it.
+The installer is not digitally signed yet, so Windows SmartScreen may show a warning (see the [FAQ](#faq)). The beta installs next to the older version and does not remove it. If 3.12.0 Beta is installed, the 3.13.0 installer updates it; settings, projects and scenarios are kept.
 
-### Creating a custom path
+### Creating a custom route
 
 1. Launch **SimRail Route Studio Beta**. If your game is not detected, select the SimRail folder manually.
 2. In the main window, pick a locomotive and wagons and add them with **＋ Add**. The first vehicle must be a locomotive or a multiple unit.
-3. Click **Custom paths (preview)**. Choose a start, optional *via* stations and a destination.
+3. Click **Custom routes (preview)**. Choose a start, optional *via* stations and a destination.
 4. Wait for the path to be calculated and review the station list. You do not need to press a separate button.
 5. Click **Save to SimRail…**, enter a scenario name (3–80 characters) and confirm.
 6. If SimRail was running, restart it. Select the scenario by its name in a new single-player game.
@@ -197,22 +214,22 @@ The scenario is saved straight into the game folder (`SimRail_Data\StreamingAsse
 ### Beta limitations
 
 - Not every station pair is supported. If no path is found, the route may still exist in the game.
-- The shortest path is not guaranteed. Routes for each direction are searched separately.
-- New paths and consists need an in-game trial run. The journey ends before the final signal, with no guaranteed platform stop.
+- The shortest path in the database is chosen. Its length is an estimate based on track lengths. Routes for each direction are searched separately.
+- New routes and consists need an in-game trial run. The journey ends before the final signal, with no guaranteed platform stop.
 - No passenger timetable or shunting integration.
 - Consist limit: about 300 m and 40 entries, or one complete multiple unit without extra vehicles.
 - Summer, 09:00 start, 6-hour mission limit; journey time is not calculated.
-- Weather and stops set in the base scenario builder are not carried over to custom paths.
+- Weather and stops set in the base scenario builder are not carried over to custom routes.
 
 ### Game version compatibility
 
-The bundled network database was captured on 8 September 2026 and matches one specific game build, identified by the SHA-256 of `GameAssembly.dll` (`879CB08397DBA4660D04B2D96B17697152B465A725E7F33D5ABA1B54B64AD37C`). After a SimRail update the custom-path module may report an incompatible build. This is deliberate and prevents scenarios that might not work. Wait for an updated database in [Releases](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases). The check applies only to the custom-path module.
+The bundled network database was captured on 8 September 2026 and matches one specific game build, identified by the SHA-256 of `GameAssembly.dll` (`879CB08397DBA4660D04B2D96B17697152B465A725E7F33D5ABA1B54B64AD37C`). After a SimRail update the custom-route module may report an incompatible build. This is deliberate and prevents scenarios that might not work. Wait for an updated database in [Releases](https://github.com/magxmetin2-dotcom/simrail-route-studio/releases). The check applies only to the custom-route module.
 
 ### Security and privacy
 
-**Installer checksum, 3.12.0 Beta (SHA-256):** `3d3982d8723090667ef8f0d2c79c1f0c4683ca3950a2b148655a1b25dfc3b4d3`
+**Installer checksum, 3.13.0 Beta (SHA-256):** `b864800da5a270c7bca547e5443f9bea77c6e35a1dbcf603e050af7711847dc5`
 
-Verify it in PowerShell: `Get-FileHash .\SimRail-Route-Studio-3.12.0-Beta-Full-Offline-Setup.exe -Algorithm SHA256`
+Verify it in PowerShell: `Get-FileHash .\SimRail-Route-Studio-3.13.0-Beta-Full-Offline-Setup.exe -Algorithm SHA256`
 
 - **Offline.** The program makes no network connections. **Launch** only opens the game through Steam.
 - **No changes to the game's code.** No administrator rights or BepInEx. Scenarios use only SimRail's built-in Lua scripting and never force signal or switch states.
@@ -220,7 +237,7 @@ Verify it in PowerShell: `Get-FileHash .\SimRail-Route-Studio-3.12.0-Beta-Full-O
 - **Local diagnostics.** Game logs are read on your computer and personal data such as your profile path, SteamID and e-mail addresses is masked. Review the report before sharing it.
 - **Only import `.srspack` packages from people you trust.** A package contains a scenario script that the game runs.
 
-Files are stored in `%LOCALAPPDATA%\Programs\SimRail Route Studio Beta` (program, database, `Backups`), `%LOCALAPPDATA%\Krzysztof Maluha\SimRail Route Studio` (settings, projects, consists, recovery) and in the game folder (`RTS_*` scenario folders and the `RouteStudioStaging` working folder).
+Files are stored in `%LOCALAPPDATA%\Programs\SimRail Route Studio Beta` (program, database, `Backups`), `%LOCALAPPDATA%\Krzysztof Maluha\SimRail Route Studio` (settings, projects, consists, recovery, `crash.log`) and in the game folder (`RTS_*` scenario folders).
 
 ### FAQ
 
@@ -238,7 +255,7 @@ Files are stored in `%LOCALAPPDATA%\Programs\SimRail Route Studio Beta` (program
 
 ### Reporting bugs
 
-Open an [issue](https://github.com/magxmetin2-dotcom/simrail-route-studio/issues) with the program version, start/via/destination stations, your consist, what happened and ideally a screenshot. A report from **Diagnostics** helps too (review it first).
+Open an [issue](https://github.com/magxmetin2-dotcom/simrail-route-studio/issues) with the program version, start/via/destination stations, your consist, what happened and ideally a screenshot. A report from **Diagnostics** helps too (review it first). If the program showed an unexpected-error message, attach `crash.log` from `%LOCALAPPDATA%\Krzysztof Maluha\SimRail Route Studio`; profile and game folder paths, SteamID and e-mail addresses are masked in it.
 
 ### Uninstalling
 
